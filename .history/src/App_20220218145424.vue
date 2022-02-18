@@ -1,9 +1,5 @@
 <template>
-    <main class="h-screen overflow-hidden flex items-center justify-center">
-        <router-view
-            class="container px-5 sm:px-20 py-20 flex justify-center"
-        />
-    </main>
+    <router-view class="container px-5 sm:px-20 py-20 flex justify-center" />
 </template>
 
 <script>
