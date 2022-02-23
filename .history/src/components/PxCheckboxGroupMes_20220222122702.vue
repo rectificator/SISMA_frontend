@@ -1,0 +1,43 @@
+<template>
+    <px-checkbox-group label="Mes 📆" :error="error" @change="valueChanged" />
+</template>
+
+<script>
+import api from '@api'
+import PxCheckboxGroup from '@/components/PxCheckboxGroup'
+export default {
+    components: { PxCheckboxGroup },
+    name: 'PxCheckboxGroupMes',
+    data() {
+        return {
+            mesObjects: [],
+            meses: [],
+        }
+    },
+
+    props: {
+        error: {
+            type: Boolean,
+            default: false,
+        },
+    },
+
+    created() {
+        api.getFrom('sisma/mes').then((data) => {
+            //console.log('DATA: ', data)
+            this.mesObjects = data
+            this.meses = this.mesObjects.map((mesObject) => {
+                return mesObject.mes
+            })
+        })
+    },
+
+    methods: {
+        valueChanged(value) {
+            //console.log('REFS: ', this.$refs)
+            for (let index = 0; index < value.length; index++) {}
+            this.$emit('changed', value)
+        },
+    },
+}
+</script>

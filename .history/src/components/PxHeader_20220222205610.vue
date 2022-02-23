@@ -1,0 +1,23 @@
+<template>
+    <nav class="flex flex-wrap flex-row">
+        <ul>
+            <li class="flex-none w-40 h-15">
+                <div>
+                    <img src="@/assets/logo_nav.png" alt="user image" />
+                </div>
+            </li>
+            <li class="flex-grow h-40 bg-red-200"></li>
+            <li class="flex-none">
+                <a href="">
+                    <div class="w-8 h-8">
+                        <img
+                            class="rounded-full border border-gray-100 shadow-sm"
+                            src="@/assets/undraw_profile_1.svg"
+                            alt="user image"
+                        />
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</template>
