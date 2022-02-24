@@ -1,9 +1,6 @@
 <template>
     <div>
-        <px-header :links="links" />
-        <div
-            class="shadow bg-black text-white font-bold text-lg py-2 px-4 mt-6"
-        >
+        <div class="bg-black text-white font-bold text-lg py-2 px-4">
             <p>{{ formName }}</p>
         </div>
         <form
@@ -84,7 +81,6 @@
 </template>
 
 <script>
-import PxHeader from '@/components/PxHeader'
 import PxSelectAnio from '@/components/PxSelectAnio'
 import PxCheckboxGroupMes from '@/components/PxCheckboxGroupMes'
 import PxAutoCompleteEstado from '@/components/PxAutoCompleteEstado'
@@ -102,7 +98,6 @@ import config from '@/config'
 export default {
     name: 'SismaForms',
     components: {
-        PxHeader,
         PxSelectAnio,
         PxCheckboxGroupMes,
         PxAutoCompleteEstado,
@@ -137,20 +132,6 @@ export default {
                 suicidio: 'suicidio',
             },
             formsThatRequireModalidadAndPoblacionFields: [],
-            links: [
-                {
-                    title: 'Home',
-                    to: { name: 'home' },
-                },
-                {
-                    title: 'Logout',
-                    to: { name: 'login' },
-                },
-                {
-                    title: 'Reporte',
-                    to: { name: 'reporte' },
-                },
-            ],
         }
     },
     computed: {

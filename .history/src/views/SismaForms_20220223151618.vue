@@ -1,9 +1,6 @@
 <template>
     <div>
-        <px-header :links="links" />
-        <div
-            class="shadow bg-black text-white font-bold text-lg py-2 px-4 mt-6"
-        >
+        <div class="bg-black text-white font-bold text-lg py-2 px-4">
             <p>{{ formName }}</p>
         </div>
         <form
@@ -49,28 +46,13 @@
             />
 
             <form-acciones-comunitarias
-                v-if="formRoute == availableForms.acciones_comunitarias"
-                @change="getComplementaryFormData"
+                v-if="formRoute == 'acciones_comunitarias'"
+                @change="getAccionesComunitarias"
             />
 
-            <form-acciones-prevencion-salud
-                v-if="formRoute == availableForms.acciones_prevencion_salud"
-                @change="getComplementaryFormData"
-            />
-
-            <form-atencion-salud
-                v-if="formRoute == availableForms.atencion_salud"
-                @change="getComplementaryFormData"
-            />
-
-            <form-capacitacion
-                v-if="formRoute == availableForms.capacitacion"
-                @change="getComplementaryFormData"
-            />
-
-            <form-suicidio
-                v-if="formRoute == availableForms.suicidio"
-                @change="getComplementaryFormData"
+            <form-acciones-comunitarias
+                v-if="formRoute == 'acciones_prevencion_salud'"
+                @change="getAccionesComunitarias"
             />
 
             <button
@@ -84,7 +66,6 @@
 </template>
 
 <script>
-import PxHeader from '@/components/PxHeader'
 import PxSelectAnio from '@/components/PxSelectAnio'
 import PxCheckboxGroupMes from '@/components/PxCheckboxGroupMes'
 import PxAutoCompleteEstado from '@/components/PxAutoCompleteEstado'
@@ -94,15 +75,19 @@ import PxSelectPoblacion from '@/components/PxSelectPoblacion'
 import PxSelectModalidad from '@/components/PxSelectModalidad'
 import FormAccionesComunitarias from '@/views/FormAccionesComunitarias'
 import FormAccionesPrevencionSalud from '@/views/FormAccionesPrevencionSalud'
-import FormAtencionSalud from '@/views/FormAtencionSalud'
-import FormCapacitacion from '@/views/FormCapacitacion'
-import FormSuicidio from '@/views/FormSuicidio'
 import config from '@/config'
+
+const availableForms = {
+    acciones_comunitarias: 'acciones_comunitarias',
+    acciones_prevencion_salud: 'acciones_prevencion_salud',
+}
+const formsThatRequireModalidadAndPoblacionFields = [
+    availableForms.acciones_comunitarias,
+]
 
 export default {
     name: 'SismaForms',
     components: {
-        PxHeader,
         PxSelectAnio,
         PxCheckboxGroupMes,
         PxAutoCompleteEstado,
@@ -112,9 +97,6 @@ export default {
         PxSelectModalidad,
         FormAccionesComunitarias,
         FormAccionesPrevencionSalud,
-        FormAtencionSalud,
-        FormCapacitacion,
-        FormSuicidio,
     },
     data() {
         return {
@@ -129,28 +111,6 @@ export default {
             validate: false,
             validateAttempts: 0,
             mesObjects: [],
-            availableForms: {
-                acciones_comunitarias: 'acciones_comunitarias',
-                acciones_prevencion_salud: 'acciones_prevencion_salud',
-                atencion_salud: 'atencion_salud',
-                capacitacion: 'capacitacion',
-                suicidio: 'suicidio',
-            },
-            formsThatRequireModalidadAndPoblacionFields: [],
-            links: [
-                {
-                    title: 'Home',
-                    to: { name: 'home' },
-                },
-                {
-                    title: 'Logout',
-                    to: { name: 'login' },
-                },
-                {
-                    title: 'Reporte',
-                    to: { name: 'reporte' },
-                },
-            ],
         }
     },
     computed: {
@@ -230,14 +190,17 @@ export default {
             this.validateForm()
             if (this.validate == true) {
                 delete this.info[this.formRoute].errors
-                let res = await fetch(`${this.apiBaseUrl}${this.formRoute}`, {
-                    method: 'POST',
-                    mode: 'cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(this.info),
-                })
+                let res = await fetch(
+                    `${this.apiBaseUrl}acciones_comunitarias`,
+                    {
+                        method: 'POST',
+                        mode: 'cors',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(this.info),
+                    }
+                )
                 res.json().then((data) => console.log(data))
                 event.target.reset()
                 this.$router.push({
@@ -293,32 +256,13 @@ export default {
                 ...acciones_comunitarias,
             }
         },
-        getComplementaryFormData(data) {
-            //console.log('AC: ', acciones_comunitarias)
-            let complementaryFormData = data
-            this.errors = { ...this.errors, ...complementaryFormData.errors }
-
-            this.info[this.formRoute] = {
-                ...this.info[this.formRoute],
-                ...complementaryFormData,
-            }
-        },
         log(...values) {
             console.log(...values)
         },
     },
-    created() {
-        this.formsThatRequireModalidadAndPoblacionFields = [
-            this.availableForms.acciones_comunitarias,
-            this.availableForms.acciones_prevencion_salud,
-            this.availableForms.capacitacion,
-        ]
-    },
     mounted() {
         this.formRequiereModalidadAndPoblacionFields =
-            this.formsThatRequireModalidadAndPoblacionFields.includes(
-                this.formRoute
-            )
+            formsThatRequireModalidadAndPoblacionFields.includes(this.formRoute)
         this.info[this.formRoute] = {}
     },
 }

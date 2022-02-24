@@ -1,9 +1,7 @@
 <template>
     <div>
         <px-header :links="links" />
-        <div
-            class="shadow bg-black text-white font-bold text-lg py-2 px-4 mt-6"
-        >
+        <div class="bg-black text-white font-bold text-lg py-2 px-4">
             <p>{{ formName }}</p>
         </div>
         <form
@@ -84,7 +82,7 @@
 </template>
 
 <script>
-import PxHeader from '@/components/PxHeader'
+import PxPxHeader from '@/components/PxHeader'
 import PxSelectAnio from '@/components/PxSelectAnio'
 import PxCheckboxGroupMes from '@/components/PxCheckboxGroupMes'
 import PxAutoCompleteEstado from '@/components/PxAutoCompleteEstado'

@@ -1,9 +1,7 @@
 <template>
     <div>
         <px-header :links="links" />
-        <div
-            class="shadow bg-black text-white font-bold text-lg py-2 px-4 mt-6"
-        >
+        <div class="bg-black text-white font-bold text-lg py-2 px-4">
             <p>{{ formName }}</p>
         </div>
         <form

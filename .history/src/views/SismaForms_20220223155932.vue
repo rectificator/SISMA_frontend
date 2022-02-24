@@ -1,9 +1,6 @@
 <template>
     <div>
-        <px-header :links="links" />
-        <div
-            class="shadow bg-black text-white font-bold text-lg py-2 px-4 mt-6"
-        >
+        <div class="bg-black text-white font-bold text-lg py-2 px-4">
             <p>{{ formName }}</p>
         </div>
         <form
@@ -63,16 +60,6 @@
                 @change="getComplementaryFormData"
             />
 
-            <form-capacitacion
-                v-if="formRoute == availableForms.capacitacion"
-                @change="getComplementaryFormData"
-            />
-
-            <form-suicidio
-                v-if="formRoute == availableForms.suicidio"
-                @change="getComplementaryFormData"
-            />
-
             <button
                 type="submit"
                 class="px-4 py-2 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none self-center"
@@ -84,7 +71,6 @@
 </template>
 
 <script>
-import PxHeader from '@/components/PxHeader'
 import PxSelectAnio from '@/components/PxSelectAnio'
 import PxCheckboxGroupMes from '@/components/PxCheckboxGroupMes'
 import PxAutoCompleteEstado from '@/components/PxAutoCompleteEstado'
@@ -95,14 +81,11 @@ import PxSelectModalidad from '@/components/PxSelectModalidad'
 import FormAccionesComunitarias from '@/views/FormAccionesComunitarias'
 import FormAccionesPrevencionSalud from '@/views/FormAccionesPrevencionSalud'
 import FormAtencionSalud from '@/views/FormAtencionSalud'
-import FormCapacitacion from '@/views/FormCapacitacion'
-import FormSuicidio from '@/views/FormSuicidio'
 import config from '@/config'
 
 export default {
     name: 'SismaForms',
     components: {
-        PxHeader,
         PxSelectAnio,
         PxCheckboxGroupMes,
         PxAutoCompleteEstado,
@@ -113,8 +96,6 @@ export default {
         FormAccionesComunitarias,
         FormAccionesPrevencionSalud,
         FormAtencionSalud,
-        FormCapacitacion,
-        FormSuicidio,
     },
     data() {
         return {
@@ -133,24 +114,8 @@ export default {
                 acciones_comunitarias: 'acciones_comunitarias',
                 acciones_prevencion_salud: 'acciones_prevencion_salud',
                 atencion_salud: 'atencion_salud',
-                capacitacion: 'capacitacion',
-                suicidio: 'suicidio',
             },
             formsThatRequireModalidadAndPoblacionFields: [],
-            links: [
-                {
-                    title: 'Home',
-                    to: { name: 'home' },
-                },
-                {
-                    title: 'Logout',
-                    to: { name: 'login' },
-                },
-                {
-                    title: 'Reporte',
-                    to: { name: 'reporte' },
-                },
-            ],
         }
     },
     computed: {
@@ -311,7 +276,6 @@ export default {
         this.formsThatRequireModalidadAndPoblacionFields = [
             this.availableForms.acciones_comunitarias,
             this.availableForms.acciones_prevencion_salud,
-            this.availableForms.capacitacion,
         ]
     },
     mounted() {

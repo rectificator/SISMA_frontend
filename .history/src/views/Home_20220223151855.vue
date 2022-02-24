@@ -1,6 +1,6 @@
 <template>
     <div>
-        <px-header :links="links" />
+        <px-header :links="links"/>
         <div
             class="flex flex-col space-y-6 my-8 px-4 py-4 bg-white border border-gray-400 rounded blur-md invert drop-shadow-xl"
         >
@@ -52,7 +52,7 @@ export default {
                 },
                 {
                     title: 'Reporte',
-                    to: { name: 'reporte' },
+                    to: { name: 'Error' },
                 },
             ],
         }
