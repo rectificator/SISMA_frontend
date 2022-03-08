@@ -20,11 +20,11 @@
                         id="email"
                         type="text"
                         name="email"
-                        placeholder="usuario"
-                        autocomplete="email"
+                        placeholder="username"
+                        autocomplete="text"
                         class="block w-full py-2 px-4 mt-2 rounded-full login-text-color bg-white border border-blue-400 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                         required
-                        v-model="usuario"
+                        v-model="keys.username"
                     />
 
                     <input
@@ -35,7 +35,7 @@
                         autocomplete="current-password"
                         class="block w-full py-2 px-4 mt-2 rounded-full login-text-color bg-white border border-blue-400 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                         required
-                        v-model="contrasenia"
+                        v-model="keys.password"
                     />
                     <button
                         type="submit"
@@ -50,24 +50,40 @@
 </template>
 
 <script>
+import config from '@/config'
 export default {
     name: 'Login',
     data() {
         return {
-            usuario: '',
-            contrasenia: '',
+            keys: {
+                username: '',
+                password: '',
+            },
         }
     },
     methods: {
         login() {
-            if (this.usuario == 'capa' && this.contrasenia == 'prueba') {
-                this.$router.push({
-                    name: 'home',
-                    params: { token: '0000' },
-                    replace: true,
+            fetch(`${config.apiBaseUrl}user/login`, {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(this.keys),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    localStorage.jwt = data.body.jwt
+                    this.$router.push({
+                        name: 'home',
+                        replace: true,
+                    })
                 })
-            }
         },
+    },
+    mounted() {
+        localStorage.jwt = ''
+        console.log(localStorage.jwt)
     },
 }
 </script>
