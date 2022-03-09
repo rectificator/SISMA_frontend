@@ -162,7 +162,7 @@
                 <div class="choropleth">
                     <state-choropleth
                         :dataset="capacitacionSaludMentalPorEstado"
-                        :background-color="choroplethRandomColor"
+                        :background-color="[100, 30, 150]"
                     />
                 </div>
                 <div class="absolute choroplethInnerInfo">
@@ -195,7 +195,7 @@
                 <div class="choropleth">
                     <state-choropleth
                         :dataset="capacitacionEnSuicidioPorEstado"
-                        :background-color="choroplethRandomColor"
+                        :background-color="choroplethRed"
                     />
                 </div>
                 <div class="absolute choroplethInnerInfo">
@@ -336,7 +336,7 @@
                 <div class="choropleth">
                     <state-choropleth
                         :dataset="capacitacionEnSuicidioPorEstado"
-                        :background-color="choroplethRandomColor"
+                        :background-color="choroplethGreen"
                     />
                 </div>
                 <div class="absolute choroplethInnerInfo">
@@ -367,7 +367,7 @@
                 <div class="choropleth">
                     <state-choropleth
                         :dataset="capacitacionEnSuicidioPorEstado"
-                        :background-color="choroplethRandomColor"
+                        :background-color="choroplethRandom"
                     />
                 </div>
                 <div class="absolute choroplethInnerInfo">
@@ -413,6 +413,25 @@ export default {
             open: false,
             choroplethRed: [255, 0, 0],
             choroplethGreen: [0, 255, 0],
+            choroplethRandom: [
+                /*
+                --blue: #007bff; -> (0,123,255)
+                --indigo: #6610f2; -> (102,16,242)
+                --purple: #6f42c1; -> (11,66,193)
+                --pink: #e83e8c; -> (232,62,140)
+                --red: #dc3545; -> (220,53,69)
+                --orange: #fd7e14; -> (253,126,20)
+                --yellow: #ffc107; -> (255,193,7)
+                --green: #28a745; -> (40,167,69)
+                --teal: #20c997; -> (32,201,151)
+                --cyan: #17a2b8; -> (23,162,84)
+                --gray: #6c757d; -> (108,117,125)
+                --gray-dark: #343a40; -> (52,58,64)
+                */
+                Math.round(Math.random() * 255),
+                Math.round(Math.random() * 255),
+                Math.round(Math.random() * 255),
+            ],
         }
     },
     props: {
@@ -477,21 +496,7 @@ export default {
         },
     },
     computed: {
-        choroplethRandomColor() {
-            /*
-                --blue: #007bff; -> (0,123,255)
-                --indigo: #6610f2; -> (102,16,242)
-                --purple: #6f42c1; -> (11,66,193)
-                --pink: #e83e8c; -> (232,62,140)
-                --red: #dc3545; -> (220,53,69)
-                --orange: #fd7e14; -> (253,126,20)
-                --yellow: #ffc107; -> (255,193,7)
-                --green: #28a745; -> (40,167,69)
-                --teal: #20c997; -> (32,201,151)
-                --cyan: #17a2b8; -> (23,162,84)
-                --gray: #6c757d; -> (108,117,125)
-                --gray-dark: #343a40; -> (52,58,64)
-                */
+        chorplethRandomColor() {
             let colorPalette = [
                 [0, 123, 255],
                 [102, 16, 242],

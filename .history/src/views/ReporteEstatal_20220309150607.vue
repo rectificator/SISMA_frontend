@@ -162,7 +162,7 @@
                 <div class="choropleth">
                     <state-choropleth
                         :dataset="capacitacionSaludMentalPorEstado"
-                        :background-color="choroplethRandomColor"
+                        :background-color="[100, 30, 150]"
                     />
                 </div>
                 <div class="absolute choroplethInnerInfo">
@@ -195,7 +195,7 @@
                 <div class="choropleth">
                     <state-choropleth
                         :dataset="capacitacionEnSuicidioPorEstado"
-                        :background-color="choroplethRandomColor"
+                        :background-color="choroplethRed"
                     />
                 </div>
                 <div class="absolute choroplethInnerInfo">
@@ -336,7 +336,7 @@
                 <div class="choropleth">
                     <state-choropleth
                         :dataset="capacitacionEnSuicidioPorEstado"
-                        :background-color="choroplethRandomColor"
+                        :background-color="choroplethGreen"
                     />
                 </div>
                 <div class="absolute choroplethInnerInfo">

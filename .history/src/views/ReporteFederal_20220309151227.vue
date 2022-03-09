@@ -1016,40 +1016,6 @@ export default {
         },
 
         ///////////////
-        choroplethRandomColor() {
-            /*
-                --blue: #007bff; -> (0,123,255)
-                --indigo: #6610f2; -> (102,16,242)
-                --purple: #6f42c1; -> (11,66,193)
-                --pink: #e83e8c; -> (232,62,140)
-                --red: #dc3545; -> (220,53,69)
-                --orange: #fd7e14; -> (253,126,20)
-                --yellow: #ffc107; -> (255,193,7)
-                --green: #28a745; -> (40,167,69)
-                --teal: #20c997; -> (32,201,151)
-                --cyan: #17a2b8; -> (23,162,84)
-                --gray: #6c757d; -> (108,117,125)
-                --gray-dark: #343a40; -> (52,58,64)
-                */
-            let colorPalette = [
-                [0, 123, 255],
-                [102, 16, 242],
-                [11, 66, 193],
-                [232, 62, 140],
-                [220, 53, 69],
-                [253, 126, 20],
-                [255, 193, 7],
-                [40, 167, 69],
-                [32, 201, 151],
-                [23, 162, 84],
-                [108, 117, 125],
-                [52, 58, 64],
-            ]
-
-            return colorPalette[
-                Math.round(Math.random() * (colorPalette.length - 1))
-            ]
-        },
 
         randomDataCollection() {
             let color1 = `rgb(${Math.round(Math.random() * 255)},${Math.round(
@@ -1201,6 +1167,40 @@ export default {
         },
     },
     methods: {
+        choroplethRandomColor() {
+            /*
+                --blue: #007bff; -> (0,123,255)
+                --indigo: #6610f2; -> (102,16,242)
+                --purple: #6f42c1; -> (11,66,193)
+                --pink: #e83e8c; -> (232,62,140)
+                --red: #dc3545; -> (220,53,69)
+                --orange: #fd7e14; -> (253,126,20)
+                --yellow: #ffc107; -> (255,193,7)
+                --green: #28a745; -> (40,167,69)
+                --teal: #20c997; -> (32,201,151)
+                --cyan: #17a2b8; -> (23,162,84)
+                --gray: #6c757d; -> (108,117,125)
+                --gray-dark: #343a40; -> (52,58,64)
+                */
+            let colorPalette = [
+                [0, 123, 255],
+                [102, 16, 242],
+                [11, 66, 193],
+                [232, 62, 140],
+                [220, 53, 69],
+                [253, 126, 20],
+                [255, 193, 7],
+                [40, 167, 69],
+                [32, 201, 151],
+                [23, 162, 84],
+                [108, 117, 125],
+                [52, 58, 64],
+            ]
+
+            return colorPalette[
+                Math.round(Math.random() * (colorPalette.length - 1))
+            ]
+        },
         toggleOpen() {
             this.open = !this.open
         },

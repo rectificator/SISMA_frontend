@@ -440,7 +440,7 @@ export default {
         },
         getInfo(token) {
             api.getFrom('sisma/estado').then((data) => {
-                //console.log('DATA: ', data)
+                console.log('DATA: ', data)
                 this.states = data
                 /* this.states = [
                     { id: 2, estado: 'CDMX' },
