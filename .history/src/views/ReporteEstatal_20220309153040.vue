@@ -2,7 +2,7 @@
     <div class="">
         <!-- component -->
         <aside class="">
-            <div class="">
+            <div :class="text-black" class="">
                 <button class="" @click="open = !open">Menu</button>
                 <div v-if="open" class="">
                     <a class="" href="#general" @click="toggleOpen"
@@ -58,6 +58,7 @@
                     <th
                         v-for="(data, dataIndex) in dataset"
                         :key="dataIndex"
+                        :class="text-black"
                         class=""
                     >
                         {{ dataIndex != 0 ? Math.round(data) : data }}
@@ -75,8 +76,8 @@
                 Neurológicos o por Consumo de Sustancias.
             </p>
 
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div class="">
+                <div class="">
                     <state-choropleth
                         :dataset="capacitacionSaludMentalPorEstado"
                         :background-color="choroplethRandomColor"
@@ -97,8 +98,8 @@
                 CURSO DIPLOMADO DE ESPECIALIZACIÓN EN IDENTIFICACIÓN, VALORACIÓN
                 E INTERVENCIÓN DE LA CONDUCTA SUICIDA.
             </p>
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div class="">
+                <div class="">
                     <state-choropleth
                         :dataset="capacitacionEnSuicidioPorEstado"
                         :background-color="choroplethRandomColor"
@@ -189,8 +190,8 @@
         <section id="" class="">
             <p class="">CONSULTAS POR ESTADO</p>
             <p class="">1ª VEZ</p>
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div class="">
+                <div class="">
                     <state-choropleth
                         :dataset="capacitacionEnSuicidioPorEstado"
                         :background-color="choroplethRandomColor"
@@ -205,8 +206,8 @@
         <section id="" class="">
             <p class="">CONSULTAS POR ESTADO</p>
             <p class="">SUBSECUENTES</p>
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div class="">
+                <div class="">
                     <state-choropleth
                         :dataset="capacitacionEnSuicidioPorEstado"
                         :background-color="choroplethRandomColor"

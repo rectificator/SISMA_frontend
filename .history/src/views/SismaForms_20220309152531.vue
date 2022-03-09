@@ -2,12 +2,17 @@
     <div class="">
         <div class="">
             <px-header :links="links" />
-            <div class="">
+            <div
+                class=""
+            >
                 <p>{{ formName }}</p>
             </div>
         </div>
         <div class="">
-            <form @submit.prevent="submitForm" class="">
+            <form
+                @submit.prevent="submitForm"
+                class=""
+            >
                 <px-select-anio
                     :error="validateAttempts > 0 ? !errors.id_anio : false"
                     @select-value="getAnio"
@@ -91,7 +96,12 @@
                     @change="getComplementaryFormData"
                 />
 
-                <button type="submit" class="">Enviar</button>
+                <button
+                    type="submit"
+                    class=""
+                >
+                    Enviar
+                </button>
             </form>
         </div>
     </div>

@@ -1,11 +1,27 @@
 <template>
     <div class="">
         <!-- component -->
-        <aside class="">
-            <div class="">
-                <button class="" @click="open = !open">Menu</button>
-                <div v-if="open" class="">
-                    <a class="" href="#general" @click="toggleOpen"
+        <aside
+            class=""
+        >
+            <div
+                :class=""
+                class=""
+            >
+                <button
+                    class=""
+                    @click="open = !open"
+                >
+                    Menu
+                </button>
+                <div
+                    v-if="open"
+                    class=""
+                >
+                    <a
+                        class=""
+                        href="#general"
+                        @click="toggleOpen"
                         >Datos generales</a
                     >
                     <a
@@ -14,41 +30,98 @@
                         @click="toggleOpen"
                         >Capacitación en salud mental</a
                     >
-                    <a class="" href="#suicidio" @click="toggleOpen"
+                    <a
+                        class=""
+                        href="#suicidio"
+                        @click="toggleOpen"
                         >Suicidio</a
                     >
-                    <a class="" href="#brigadas_grupos" @click="toggleOpen"
+                    <a
+                        class=""
+                        href="#brigadas_grupos"
+                        @click="toggleOpen"
                         >Brigadas y grupos de apoyo</a
                     >
-                    <a class="" href="#consultas" @click="toggleOpen"
+                    <a
+                        class=""
+                        href="#consultas"
+                        @click="toggleOpen"
                         >Consultas</a
                     >
                 </div>
             </div>
         </aside>
         <section id="general" class="">
-            <p class="">Datos generales</p>
+            <p
+                class=""
+            >
+                Datos generales
+            </p>
             <table class="">
                 <tr class="">
                     <th class=""></th>
-                    <th colspan="2" class="">Acciones comunitarias</th>
+                    <th colspan="2" class="">
+                        Acciones comunitarias
+                    </th>
                     <th colspan="2" class="">Capacitación</th>
-                    <th colspan="2" class="">Acciones de prevención</th>
+                    <th colspan="2" class="">
+                        Acciones de prevención
+                    </th>
                     <th class=""></th>
                     <th class=""></th>
                     <th class=""></th>
                 </tr>
                 <tr class="">
-                    <th class="">Estado</th>
-                    <th class="">Personas</th>
-                    <th class="">Acciones</th>
-                    <th class="">Personas</th>
-                    <th class="">Acciones</th>
-                    <th class="">Personas</th>
-                    <th class="">Acciones</th>
-                    <th class="">Atención</th>
-                    <th class="">Suicidio</th>
-                    <th class="">Políticas</th>
+                    <th
+                        class=""
+                    >
+                        Estado
+                    </th>
+                    <th
+                        class=""
+                    >
+                        Personas
+                    </th>
+                    <th
+                        class=""
+                    >
+                        Acciones
+                    </th>
+                    <th
+                        class=""
+                    >
+                        Personas
+                    </th>
+                    <th
+                        class=""
+                    >
+                        Acciones
+                    </th>
+                    <th
+                        class=""
+                    >
+                        Personas
+                    </th>
+                    <th
+                        class=""
+                    >
+                        Acciones
+                    </th>
+                    <th
+                        class=""
+                    >
+                        Atención
+                    </th>
+                    <th
+                        class=""
+                    >
+                        Suicidio
+                    </th>
+                    <th
+                        class=""
+                    >
+                        Políticas
+                    </th>
                 </tr>
                 <tr
                     v-for="(dataset, datasetIndex) in generalInfoWithStates"
@@ -58,6 +131,7 @@
                     <th
                         v-for="(data, dataIndex) in dataset"
                         :key="dataIndex"
+                        :class=""
                         class=""
                     >
                         {{ dataIndex != 0 ? Math.round(data) : data }}
@@ -65,25 +139,37 @@
                 </tr>
             </table>
         </section>
-        <section id="capacitacion_salud_mental" class="">
-            <p class="">
+        <section
+            id="capacitacion_salud_mental"
+            class=""
+        >
+            <p
+                class=""
+            >
                 CAPACITACION EN SALUD MENTAL A PERSONAL DE 1er NIVEL DE
                 ATENCIÓN.
             </p>
-            <p class="">
+            <p
+                class=""
+            >
                 Guía de Intervención para la Atención de Trastornos Mentales,
                 Neurológicos o por Consumo de Sustancias.
             </p>
 
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div
+                class=""
+            >
+                <div class="">
                     <state-choropleth
                         :dataset="capacitacionSaludMentalPorEstado"
                         :background-color="choroplethRandomColor"
                     />
                 </div>
                 <div class="">
-                    <span class="">{{ totalCapacitacionSaludMental }}</span>
+                    <span
+                        class=""
+                        >{{ totalCapacitacionSaludMental }}</span
+                    >
                     <p class="">
                         Recursos Humanos capacitados del 1er nivel de atención
                     </p>
@@ -92,20 +178,31 @@
         </section>
 
         <section id="suicidio" class="">
-            <p class="">CAPACITACION EN SUICIDIO A PERSONAL DE SALUD MENTAL</p>
-            <p class="">
+            <p
+                class=""
+            >
+                CAPACITACION EN SUICIDIO A PERSONAL DE SALUD MENTAL
+            </p>
+            <p
+                class=""
+            >
                 CURSO DIPLOMADO DE ESPECIALIZACIÓN EN IDENTIFICACIÓN, VALORACIÓN
                 E INTERVENCIÓN DE LA CONDUCTA SUICIDA.
             </p>
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div
+                class=""
+            >
+                <div class="">
                     <state-choropleth
                         :dataset="capacitacionEnSuicidioPorEstado"
                         :background-color="choroplethRandomColor"
                     />
                 </div>
                 <div class="">
-                    <span class="">{{ totalCapacitacionSuicidio }}</span>
+                    <span
+                        class=""
+                        >{{ totalCapacitacionSuicidio }}</span
+                    >
                     <p class="">
                         Recursos Humanos capacitados en prevención del suicidio
                     </p>
@@ -114,7 +211,11 @@
         </section>
 
         <section id="brigadas_grupos" class="">
-            <p class="">AVANCE BRIGADAS Y GRUPOS DE APOYO EN SALUD MENTAL</p>
+            <p
+                class=""
+            >
+                AVANCE BRIGADAS Y GRUPOS DE APOYO EN SALUD MENTAL
+            </p>
 
             <div class="">
                 <horizontal-bar-chart
@@ -124,7 +225,11 @@
         </section>
 
         <section id="consultas" class="">
-            <p class="">CONSULTAS OTORGADAS DE 1ª Vez y Subsecuentes</p>
+            <p
+                class=""
+            >
+                CONSULTAS OTORGADAS DE 1ª Vez y Subsecuentes
+            </p>
 
             <div class="">
                 <horizontal-bar-chart :chart-data="consultasDataCollection" />
@@ -132,7 +237,11 @@
         </section>
 
         <section id="" class="">
-            <p class="">CAPACITACIONES POR ESTADO</p>
+            <p
+                class=""
+            >
+                CAPACITACIONES POR ESTADO
+            </p>
 
             <div class="">
                 <line-chart :chart-data="randomDataCollection" />
@@ -140,7 +249,11 @@
         </section>
 
         <section id="" class="">
-            <p class="">REFERENCIAS POR INTENTO DE SUICIDIO</p>
+            <p
+                class=""
+            >
+                REFERENCIAS POR INTENTO DE SUICIDIO
+            </p>
 
             <div class="">
                 <radar-chart :chart-data="randomDataCollection" />
@@ -148,7 +261,11 @@
         </section>
 
         <section id="" class="">
-            <p class="">CONSULTAS OTORGADAS DE 1ª Vez y Subsecuentes</p>
+            <p
+                class=""
+            >
+                CONSULTAS OTORGADAS DE 1ª Vez y Subsecuentes
+            </p>
 
             <div class="">
                 <doughnut-chart :chart-data="randomDoughnutDataCollection" />
@@ -156,7 +273,11 @@
         </section>
 
         <section id="" class="">
-            <p class="">Politicas públicas promedio</p>
+            <p
+                class=""
+            >
+                Politicas públicas promedio
+            </p>
 
             <div class="">
                 <polar-area-chart :chart-data="randomDoughnutDataCollection" />
@@ -164,7 +285,11 @@
         </section>
 
         <section id="" class="">
-            <p class="">Capacitacion promedio</p>
+            <p
+                class=""
+            >
+                Capacitacion promedio
+            </p>
 
             <div class="">
                 <pie-chart :chart-data="randomDoughnutDataCollection" />
@@ -172,7 +297,11 @@
         </section>
 
         <section id="" class="">
-            <p class="">CONSULTAS OTORGADAS DE 1ª Vez y Subsecuentes</p>
+            <p
+                class=""
+            >
+                CONSULTAS OTORGADAS DE 1ª Vez y Subsecuentes
+            </p>
 
             <div class="">
                 <bubble-chart :chart-data="randomBubbleDataCollection" />
@@ -180,41 +309,75 @@
         </section>
 
         <section id="" class="">
-            <p class="">CONSULTAS OTORGADAS DE 1ª Vez y Subsecuentes</p>
+            <p
+                class=""
+            >
+                CONSULTAS OTORGADAS DE 1ª Vez y Subsecuentes
+            </p>
 
             <div class="">
                 <scatter-chart :chart-data="randomScatterDataCollection" />
             </div>
         </section>
         <section id="" class="">
-            <p class="">CONSULTAS POR ESTADO</p>
-            <p class="">1ª VEZ</p>
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <p
+                class=""
+            >
+                CONSULTAS POR ESTADO
+            </p>
+            <p
+                class=""
+            >
+                1ª VEZ
+            </p>
+            <div
+                class=""
+            >
+                <div class="">
                     <state-choropleth
                         :dataset="capacitacionEnSuicidioPorEstado"
                         :background-color="choroplethRandomColor"
                     />
                 </div>
                 <div class="">
-                    <span class="">{{ totalCapacitacionSuicidio }}</span>
-                    <p class="">Consultas de 1ª vez</p>
+                    <span
+                        class=""
+                        >{{ totalCapacitacionSuicidio }}</span
+                    >
+                    <p class="">
+                        Consultas de 1ª vez
+                    </p>
                 </div>
             </div>
         </section>
         <section id="" class="">
-            <p class="">CONSULTAS POR ESTADO</p>
-            <p class="">SUBSECUENTES</p>
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <p
+                class=""
+            >
+                CONSULTAS POR ESTADO
+            </p>
+            <p
+                class=""
+            >
+                SUBSECUENTES
+            </p>
+            <div
+                class=""
+            >
+                <div class="">
                     <state-choropleth
                         :dataset="capacitacionEnSuicidioPorEstado"
                         :background-color="choroplethRandomColor"
                     />
                 </div>
                 <div class="">
-                    <span class="">{{ totalCapacitacionSuicidio }}</span>
-                    <p class="">Consultas subsecuentes</p>
+                    <span
+                        class=""
+                        >{{ totalCapacitacionSuicidio }}</span
+                    >
+                    <p class="">
+                        Consultas subsecuentes
+                    </p>
                 </div>
             </div>
         </section>

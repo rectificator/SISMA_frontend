@@ -2,7 +2,7 @@
     <div class="">
         <!-- component -->
         <aside class="">
-            <div class="">
+            <div :class="text-black" class="">
                 <button class="" @click="open = !open">Menu</button>
                 <div v-if="open" class="">
                     <a
@@ -40,8 +40,8 @@
                 COMUNITARIAS
             </p>
 
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div class="">
+                <div class="">
                     <state-choropleth
                         :dataset="
                             randomizeList(
@@ -125,8 +125,8 @@
                 ADICCIONES A NIVEL NACIONAL
             </p>
 
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div class="">
+                <div class="">
                     <state-choropleth
                         :dataset="randomizeList(capacitacionSaludMental)"
                         :background-color="choroplethRandomColor"
@@ -198,8 +198,8 @@
                 Neurológicos o por Consumo de Sustancias.
             </p>
 
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div class="">
+                <div class="">
                     <state-choropleth
                         :dataset="
                             randomizeList(personalCapacitadoEnGeneralPorEstado)
@@ -223,8 +223,8 @@
                 E INTERVENCIÓN DE LA CONDUCTA SUICIDA.
             </p>
 
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div class="">
+                <div class="">
                     <state-choropleth
                         :dataset="
                             randomizeList(
@@ -249,8 +249,8 @@
                 ADICCIONES A NIVEL NACIONAL
             </p>
 
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div class="">
+                <div class="">
                     <state-choropleth
                         :dataset="
                             randomizeList(

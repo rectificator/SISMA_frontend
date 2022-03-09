@@ -1,13 +1,19 @@
 <template>
     <header class="">
         <nav>
-            <nav class="">
-                <div class="">
+            <nav
+                class=""
+            >
+                <div
+                    class=""
+                >
                     <div class="">
                         <img src="@/assets/logo_nav.png" alt="user image" />
                     </div>
                 </div>
-                <div class="">
+                <div
+                    class=""
+                >
                     <div class="">
                         <router-link
                             v-for="link in links"
@@ -20,14 +26,23 @@
                     </div>
                 </div>
                 <div class="">
-                    <div @click="showUserMenu = !showUserMenu" class="">
+                    <div
+                        @click="showUserMenu = !showUserMenu"
+                        class=""
+                    >
                         <img
                             src="@/assets/undraw_profile_1.svg"
                             alt="user image"
                         />
                     </div>
-                    <div v-if="showUserMenu" class="">
-                        <router-link to="admin" class="">
+                    <div
+                        v-if="showUserMenu"
+                        class=""
+                    >
+                        <router-link
+                            to="admin"
+                            class=""
+                        >
                             Administración
                         </router-link>
                     </div>

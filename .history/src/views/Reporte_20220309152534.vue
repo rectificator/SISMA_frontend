@@ -1,6 +1,8 @@
 <template>
     <div v-if="jwt != ''">
-        <div class="">
+        <div
+            class=""
+        >
             <px-header :links="links" />
             <div class="">
                 <button

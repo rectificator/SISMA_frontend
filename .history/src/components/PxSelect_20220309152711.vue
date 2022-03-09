@@ -1,7 +1,12 @@
 <template>
     <div>
         <label for="info">{{ label }}</label>
-        <select :id="info" :ref="info" v-on:change="selectItem" class="">
+        <select
+            :id="info"
+            :ref="info"
+            v-on:change="selectItem"
+            class=""
+        >
             <option value="" disabled selected hidden>
                 Selecciona una opción
             </option>

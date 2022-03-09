@@ -2,7 +2,7 @@
     <div class="">
         <!-- component -->
         <aside class="">
-            <div class="">
+            <div :class="text-black" class="">
                 <button class="" @click="open = !open">Menu</button>
                 <div v-if="open" class="">
                     <a class="" href="#general" @click="toggleOpen"
@@ -58,6 +58,7 @@
                     <th
                         v-for="(data, dataIndex) in dataset"
                         :key="dataIndex"
+                        :class="text-black"
                         class=""
                     >
                         {{ dataIndex != 0 ? Math.round(data) : data }}

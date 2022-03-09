@@ -2,18 +2,28 @@
     <div class="">
         <div class="">
             <px-header :links="links" />
-            <div class="">
+            <div
+                class=""
+            >
                 <p>{{ formName }}</p>
             </div>
         </div>
         <div class="">
-            <form @submit.prevent="submitForm" class="">
+            <form
+                @submit.prevent="submitForm"
+                class=""
+            >
                 <form-agregar-usuario
                     v-if="formRoute == availableForms.agregar_usuario"
                     @change="getComplementaryFormData"
                 />
 
-                <button type="submit" class="">Enviar</button>
+                <button
+                    type="submit"
+                    class=""
+                >
+                    Enviar
+                </button>
             </form>
         </div>
     </div>

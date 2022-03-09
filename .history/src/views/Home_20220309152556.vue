@@ -3,12 +3,14 @@
         <div class="">
             <px-header :links="links" />
         </div>
-        <div class="">
+        <div
+            class=""
+        >
             <router-link
                 v-for="form in forms"
                 :key="forms.indexOf(form)"
                 :to="{
-                    name: 'form',
+                    name: 'sisma-form',
                     params: { form: form.routeName, name: form.name },
                 }"
                 class=""
@@ -16,7 +18,7 @@
                 {{ form.name }}
             </router-link>
 
-            <!-- <form
+            <form
                 ref="form"
                 class=""
             >
@@ -28,7 +30,7 @@
                     tabindex="-1"
                     class=""
                 />
-            </form> -->
+            </form>
         </div>
     </div>
 </template>
@@ -44,17 +46,18 @@ export default {
             jwt: undefined,
             forms: [
                 {
-                    routeName: 'agregar_usuario',
-                    name: 'Agregar usuario',
+                    routeName: 'acciones_comunitarias',
+                    name: 'Acciones comunitarias',
                 },
                 {
-                    routeName: 'eliminar_usuario',
-                    name: 'Eliminar usuario',
+                    routeName: 'acciones_prevencion_salud',
+                    name: 'Acciones de prevención en salud',
                 },
-                {
-                    routeName: 'cambiar_contrasenia',
-                    name: 'Cambiar contraseña',
-                },
+                { routeName: 'atencion_salud', name: 'Atención en salud' },
+                { routeName: 'capacitacion', name: 'Capacitación' },
+                { routeName: 'politicas_publicas', name: 'Políticas públicas' },
+                { routeName: 'suicidio', name: 'Suicidio' },
+                { routeName: 'mhGAP', name: 'mhGAP' },
             ],
             links: [
                 {

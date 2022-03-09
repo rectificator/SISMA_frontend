@@ -3,7 +3,9 @@
         <div class="">
             <px-header :links="links" />
         </div>
-        <div class="">
+        <div
+            class=""
+        >
             <router-link
                 v-for="form in forms"
                 :key="forms.indexOf(form)"

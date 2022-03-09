@@ -9,7 +9,9 @@
                         srcset=""
                     />
                 </figure>
-                <h1 class="">
+                <h1
+                    class=""
+                >
                     <span>Sistema de Información en Salud</span>
                     <span>Mental y Adicciones</span>
                 </h1>
@@ -35,7 +37,12 @@
                         required
                         v-model="keys.password"
                     />
-                    <button type="submit" class="">Ingresar</button>
+                    <button
+                        type="submit"
+                        class=""
+                    >
+                        Ingresar
+                    </button>
                 </form>
             </div>
         </div>

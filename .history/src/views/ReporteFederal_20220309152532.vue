@@ -1,10 +1,23 @@
 <template>
     <div class="">
         <!-- component -->
-        <aside class="">
-            <div class="">
-                <button class="" @click="open = !open">Menu</button>
-                <div v-if="open" class="">
+        <aside
+            class=""
+        >
+            <div
+                :class=""
+                class=""
+            >
+                <button
+                    class=""
+                    @click="open = !open"
+                >
+                    Menu
+                </button>
+                <div
+                    v-if="open"
+                    class=""
+                >
                     <a
                         class=""
                         href="#acciones_comunitarias"
@@ -17,7 +30,10 @@
                         @click="toggleOpen"
                         >Capacitación en salud mental y adicciones</a
                     >
-                    <a class="" href="#suicidio" @click="toggleOpen"
+                    <a
+                        class=""
+                        href="#suicidio"
+                        @click="toggleOpen"
                         >Capacitación en Suicidio</a
                     >
                     <a
@@ -26,22 +42,37 @@
                         @click="toggleOpen"
                         >Acciones de prevención en salud mental</a
                     >
-                    <a class="" href="#consultas" @click="toggleOpen"
+                    <a
+                        class=""
+                        href="#consultas"
+                        @click="toggleOpen"
                         >Consultas</a
                     >
-                    <a class="" href="#resumen" @click="toggleOpen">Resumen</a>
+                    <a
+                        class=""
+                        href="#resumen"
+                        @click="toggleOpen"
+                        >Resumen</a
+                    >
                 </div>
             </div>
         </aside>
 
-        <section id="acciones_comunitarias" class="">
-            <p class="">
+        <section
+            id="acciones_comunitarias"
+            class=""
+        >
+            <p
+                class=""
+            >
                 NÚMERO DE PERSONAS ALCANZADAS POR ESTADO EN ACCIONES
                 COMUNITARIAS
             </p>
 
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div
+                class=""
+            >
+                <div class="">
                     <state-choropleth
                         :dataset="
                             randomizeList(
@@ -52,27 +83,49 @@
                     />
                 </div>
                 <div class="">
-                    <span class="">{{
-                        totalNacionalAccionesComunitarias
-                    }}</span>
-                    <p class="">PERSONAS ALCANZADAS EN</p>
-                    <p class="">ACCIONES DE PREVENCIÓN EN SALUD</p>
-                    <span class="">{{
-                        totalNacionalAccionesPrevencionSalud
-                    }}</span>
-                    <p class="">PERSONAS ALCANZADAS EN</p>
-                    <p class="">ACCIONES COMUNITARIAS</p>
-                    <span class="">TOTAL </span>
-                    <span class="">{{ totalAccionesNacionales }} </span>
-                    <p class="">PERSONAS ALCANZADAS</p>
+                    <span
+                        class=""
+                        >{{ totalNacionalAccionesComunitarias }}</span
+                    >
+                    <p class="">
+                        PERSONAS ALCANZADAS EN
+                    </p>
+                    <p class="">
+                        ACCIONES DE PREVENCIÓN EN SALUD
+                    </p>
+                    <span
+                        class=""
+                        >{{ totalNacionalAccionesPrevencionSalud }}</span
+                    >
+                    <p class="">
+                        PERSONAS ALCANZADAS EN
+                    </p>
+                    <p class="">
+                        ACCIONES COMUNITARIAS
+                    </p>
+                    <span
+                        class=""
+                        >TOTAL
+                    </span>
+                    <span
+                        class=""
+                        >{{ totalAccionesNacionales }}
+                    </span>
+                    <p class="">
+                        PERSONAS ALCANZADAS
+                    </p>
                 </div>
             </div>
             <div class="">
                 <div class="">
                     <table class="">
                         <tr class="">
-                            <th class="">Estados</th>
-                            <th class="">Número de actividades</th>
+                            <th class="">
+                                Estados
+                            </th>
+                            <th class="">
+                                Número de actividades
+                            </th>
                         </tr>
                         <tr
                             v-for="(
@@ -90,8 +143,12 @@
                     </table>
                     <table class="">
                         <tr class="">
-                            <th class="">Estados</th>
-                            <th class="">Número de actividades</th>
+                            <th class="">
+                                Estados
+                            </th>
+                            <th class="">
+                                Número de actividades
+                            </th>
                         </tr>
                         <tr
                             v-for="(
@@ -99,53 +156,86 @@
                             ) in actividadesRealizadasPorEstadoAccionesPrevencionSalud"
                             :key="index"
                         >
-                            <th v-if="index >= 16" class="">
+                            <th
+                                v-if="index >= 16"
+                                class=""
+                            >
                                 {{ item.estado }}
                             </th>
-                            <th v-if="index >= 16" class="">
+                            <th
+                                v-if="index >= 16"
+                                class=""
+                            >
                                 {{ item.value }}
                             </th>
                         </tr>
                     </table>
                 </div>
                 <div class="">
-                    <span class="">TOTAL </span>
-                    <p class="">NÚMERO DE ACTIVIDADES</p>
-                    <span class=""
+                    <span
+                        class=""
+                        >TOTAL
+                    </span>
+                    <p class="">
+                        NÚMERO DE ACTIVIDADES
+                    </p>
+                    <span
+                        class=""
                         >{{ totalNacionalActividadesAccionesComunitarias }}
                     </span>
-                    <p class="">ACCIONES COMUNITARIAS</p>
+                    <p
+                        class=""
+                    >
+                        ACCIONES COMUNITARIAS
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section id="capacitacion_salud_mental" class="">
-            <p class="">
+        <section
+            id="capacitacion_salud_mental"
+            class=""
+        >
+            <p
+                class=""
+            >
                 NÚMERO DE PERSONAS CAPACITADAS EN MATERIA DE SALUD MENTAL Y
                 ADICCIONES A NIVEL NACIONAL
             </p>
 
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div
+                class=""
+            >
+                <div class="">
                     <state-choropleth
                         :dataset="randomizeList(capacitacionSaludMental)"
                         :background-color="choroplethRandomColor"
                     />
                 </div>
                 <div class="">
-                    <span class="">TOTAL </span>
-                    <span class=""
+                    <span
+                        class=""
+                        >TOTAL
+                    </span>
+                    <span
+                        class=""
                         >{{ totalpersonasCapacitadasSaludMental }}
                     </span>
-                    <p class="">PERSONAS CAPACITADAS</p>
+                    <p class="">
+                        PERSONAS CAPACITADAS
+                    </p>
                 </div>
             </div>
             <div class="">
                 <div class="">
                     <table class="">
                         <tr class="">
-                            <th class="">Estados</th>
-                            <th class="">Número de capacitaciones</th>
+                            <th class="">
+                                Estados
+                            </th>
+                            <th class="">
+                                Número de capacitaciones
+                            </th>
                         </tr>
                         <tr
                             v-for="(
@@ -163,8 +253,12 @@
                     </table>
                     <table class="">
                         <tr class="">
-                            <th class="">Estados</th>
-                            <th class="">Número de capacitaciones</th>
+                            <th class="">
+                                Estados
+                            </th>
+                            <th class="">
+                                Número de capacitaciones
+                            </th>
                         </tr>
                         <tr
                             v-for="(
@@ -172,34 +266,54 @@
                             ) in capacitacionesRealizadasSaludMentalPorEstado"
                             :key="index"
                         >
-                            <th v-if="index >= 16" class="">
+                            <th
+                                v-if="index >= 16"
+                                class=""
+                            >
                                 {{ item.estado }}
                             </th>
-                            <th v-if="index >= 16" class="">
+                            <th
+                                v-if="index >= 16"
+                                class=""
+                            >
                                 {{ item.value }}
                             </th>
                         </tr>
                     </table>
                 </div>
                 <div class="">
-                    <span class="">TOTAL </span>
-                    <span class=""
+                    <span
+                        class=""
+                        >TOTAL
+                    </span>
+                    <span
+                        class=""
                         >{{ totalNacionalCapacitacionesRealizadasSaludMental }}
                     </span>
-                    <p class="">CAPACITACIONES REALIZADAS</p>
+                    <p
+                        class=""
+                    >
+                        CAPACITACIONES REALIZADAS
+                    </p>
                 </div>
             </div>
-            <p class="">
+            <p
+                class=""
+            >
                 CAPACITACION EN SALUD MENTAL A PERSONAL DE 1er NIVEL DE
                 ATENCIÓN.
             </p>
-            <p class="">
+            <p
+                class=""
+            >
                 Guía de Intervención para la Atención de Trastornos Mentales,
                 Neurológicos o por Consumo de Sustancias.
             </p>
 
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div
+                class=""
+            >
+                <div class="">
                     <state-choropleth
                         :dataset="
                             randomizeList(personalCapacitadoEnGeneralPorEstado)
@@ -208,7 +322,10 @@
                     />
                 </div>
                 <div class="">
-                    <span class="">{{ totalPersonal1erNivelCapacitado }}</span>
+                    <span
+                        class=""
+                        >{{ totalPersonal1erNivelCapacitado }}</span
+                    >
                     <p class="">
                         Recursos Humanos capacitados del 1er nivel de atención
                     </p>
@@ -217,14 +334,22 @@
         </section>
 
         <section id="suicidio" class="">
-            <p class="">CAPACITACION EN SUICIDIO A PERSONAL DE SALUD MENTAL.</p>
-            <p class="">
+            <p
+                class=""
+            >
+                CAPACITACION EN SUICIDIO A PERSONAL DE SALUD MENTAL.
+            </p>
+            <p
+                class=""
+            >
                 CURSO DIPLOMADO DE ESPECIALIZACIÓN EN IDENTIFICACIÓN, VALORACIÓN
                 E INTERVENCIÓN DE LA CONDUCTA SUICIDA.
             </p>
 
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div
+                class=""
+            >
+                <div class="">
                     <state-choropleth
                         :dataset="
                             randomizeList(
@@ -235,22 +360,32 @@
                     />
                 </div>
                 <div class="">
-                    <span class=""
+                    <span
+                        class=""
                         >{{ totalNacionalPersonasQueCursaronDiplomadoSuicidio }}
                     </span>
-                    <p class="">Recursos Humanos capacitados</p>
+                    <p class="">
+                        Recursos Humanos capacitados
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section id="acciones_prevencion_salud_mental" class="">
-            <p class="">
+        <section
+            id="acciones_prevencion_salud_mental"
+            class=""
+        >
+            <p
+                class=""
+            >
                 PERSONAS ALCANZADAS EN ACCIONES DE PREVENCIÓN EN SALUD MENTAL Y
                 ADICCIONES A NIVEL NACIONAL
             </p>
 
-            <div class="choroplethContainer">
-                <div class="choropleth">
+            <div
+                class=""
+            >
+                <div class="">
                     <state-choropleth
                         :dataset="
                             randomizeList(
@@ -261,22 +396,34 @@
                     />
                 </div>
                 <div class="">
-                    <p class="">ACCIONES DE PREVENCIÓN A NIVEL NACIONAL</p>
-                    <span class="">TOTAL </span>
-                    <span class=""
+                    <p class="">
+                        ACCIONES DE PREVENCIÓN A NIVEL NACIONAL
+                    </p>
+                    <span
+                        class=""
+                        >TOTAL
+                    </span>
+                    <span
+                        class=""
                         >{{
                             totalNacionalPersonasAlcanzadasAccionesPrevencionSalud
                         }}
                     </span>
-                    <p class="">PERSONAS ALCANZADAS</p>
+                    <p class="">
+                        PERSONAS ALCANZADAS
+                    </p>
                 </div>
             </div>
             <div class="">
                 <div class="">
                     <table class="">
                         <tr class="">
-                            <th class="">Estados</th>
-                            <th class="">Número de acciones</th>
+                            <th class="">
+                                Estados
+                            </th>
+                            <th class="">
+                                Número de acciones
+                            </th>
                         </tr>
                         <tr
                             v-for="(
@@ -284,18 +431,28 @@
                             ) in actividadesRealizadasPorEstadoAccionesPrevencionSalud"
                             :key="index"
                         >
-                            <th v-if="index < 16" class="">
+                            <th
+                                v-if="index < 16"
+                                class=""
+                            >
                                 {{ item.estado }}
                             </th>
-                            <th v-if="index < 16" class="">
+                            <th
+                                v-if="index < 16"
+                                class=""
+                            >
                                 {{ item.value }}
                             </th>
                         </tr>
                     </table>
                     <table class="">
                         <tr class="">
-                            <th class="">Estados</th>
-                            <th class="">Número de acciones</th>
+                            <th class="">
+                                Estados
+                            </th>
+                            <th class="">
+                                Número de acciones
+                            </th>
                         </tr>
                         <tr
                             v-for="(
@@ -303,35 +460,50 @@
                             ) in actividadesRealizadasPorEstadoAccionesPrevencionSalud"
                             :key="index"
                         >
-                            <th v-if="index >= 16" class="">
+                            <th
+                                v-if="index >= 16"
+                                class=""
+                            >
                                 {{ item.estado }}
                             </th>
-                            <th v-if="index >= 16" class="">
+                            <th
+                                v-if="index >= 16"
+                                class=""
+                            >
                                 {{ item.value }}
                             </th>
                         </tr>
                     </table>
                 </div>
                 <div class="">
-                    <span class=""
+                    <span
+                        class=""
                         >{{ totalNacionalAccionesPrevencionSalud }}
                     </span>
-                    <p class="">ACCIONES DE PREVENCIÓN</p>
+                    <p class="">
+                        ACCIONES DE PREVENCIÓN
+                    </p>
                 </div>
             </div>
         </section>
         <section id="consultas" class="">
-            <p class="">
+            <p
+                class=""
+            >
                 DISTRIBUCIÓN POR DIAGNÓSTICO (CIJ, CAPAS, UNIVERSIDADES)
             </p>
             <div class="">
                 <bar-chart :chart-data="consultasDataCollection" />
             </div>
-            <p class="">
+            <p
+                class=""
+            >
                 <span>Consultas de Primera Vez: </span>
                 <span>{{ totalNoConsultasPrimeraVez }}</span>
             </p>
-            <p class="">
+            <p
+                class=""
+            >
                 <span>Consultas subsecuentes: </span>
                 <span>{{ totalNoConsultasSubsecuentes }}</span>
             </p>
@@ -339,22 +511,30 @@
 
         <section id="resumen" class="">
             <div class="">
-                <div class="">
+                <div
+                    class=""
+                >
                     <div class=""></div>
                     <span>{{ totalReunionesDeTrabajo }}</span>
                     <p>REUNIONES DE TRABAJO</p>
                 </div>
-                <div class="">
+                <div
+                    class=""
+                >
                     <div class=""></div>
                     <span>{{ totalConveniosDeColaboracion }}</span>
                     <p>CONVENIOS DE COLABORACION</p>
                 </div>
-                <div class="">
+                <div
+                    class=""
+                >
                     <div class=""></div>
                     <span>{{ totalBeneficiosOtorgados }}</span>
                     <p>BENEFICIOS OTORGADOS</p>
                 </div>
-                <div class="">
+                <div
+                    class=""
+                >
                     <div class=""></div>
                     <span>{{ totalPoliticasPublicas }}</span>
                     <p>POLITICAS PUBLICAS</p>
@@ -362,7 +542,11 @@
             </div>
         </section>
         <section id="" class="">
-            <p class="">CAPACITACIONES POR ESTADO</p>
+            <p
+                class=""
+            >
+                CAPACITACIONES POR ESTADO
+            </p>
 
             <div class="">
                 <line-chart :chart-data="randomDataCollection" />
@@ -370,7 +554,11 @@
         </section>
 
         <section id="" class="">
-            <p class="">REFERENCIAS POR INTENTO DE SUICIDIO</p>
+            <p
+                class=""
+            >
+                REFERENCIAS POR INTENTO DE SUICIDIO
+            </p>
 
             <div class="">
                 <radar-chart :chart-data="randomDataCollection" />
@@ -378,7 +566,11 @@
         </section>
 
         <section id="" class="">
-            <p class="">CONSULTAS DE PRIMERA VEZ</p>
+            <p
+                class=""
+            >
+                CONSULTAS DE PRIMERA VEZ
+            </p>
 
             <div class="">
                 <doughnut-chart :chart-data="randomDoughnutDataCollection" />
@@ -386,7 +578,11 @@
         </section>
 
         <section id="" class="">
-            <p class="">CONSULTAS SUBSECUENTES</p>
+            <p
+                class=""
+            >
+                CONSULTAS SUBSECUENTES
+            </p>
 
             <div class="">
                 <doughnut-chart :chart-data="randomDoughnutDataCollection" />
@@ -394,7 +590,11 @@
         </section>
 
         <section id="" class="">
-            <p class="">ACCIONES DE PREVENCIÓN POR MES</p>
+            <p
+                class=""
+            >
+                ACCIONES DE PREVENCIÓN POR MES
+            </p>
 
             <div class="">
                 <polar-area-chart :chart-data="randomDoughnutDataCollection" />
@@ -402,7 +602,11 @@
         </section>
 
         <section id="" class="">
-            <p class="">CAPACITACIÓN POR ESTADO POR MES</p>
+            <p
+                class=""
+            >
+                CAPACITACIÓN POR ESTADO POR MES
+            </p>
 
             <div class="">
                 <pie-chart :chart-data="randomDoughnutDataCollection" />
@@ -410,8 +614,14 @@
         </section>
 
         <section id="" class="">
-            <p class="">ACCIONES COMUNITARIAS</p>
-            <p class="">
+            <p
+                class=""
+            >
+                ACCIONES COMUNITARIAS
+            </p>
+            <p
+                class=""
+            >
                 PERSONAS ALCANZADAS VS ACTIVIDADES REALIZADAS POR ESTADO
             </p>
 
@@ -421,8 +631,16 @@
         </section>
 
         <section id="" class="">
-            <p class="">ACCIONES COMUNITARIAS</p>
-            <p class="">PERSONAS ALCANZADAS VS ACTIVIDADES REALIZADAS</p>
+            <p
+                class=""
+            >
+                ACCIONES COMUNITARIAS
+            </p>
+            <p
+                class=""
+            >
+                PERSONAS ALCANZADAS VS ACTIVIDADES REALIZADAS
+            </p>
 
             <div class="">
                 <scatter-chart :chart-data="randomScatterDataCollection" />
@@ -430,7 +648,9 @@
         </section>
 
         <section id="consultas" class="">
-            <p class="">
+            <p
+                class=""
+            >
                 CONSULTAS MENSUALES OTORGADAS DE 1ª Vez y Subsecuentes
             </p>
 

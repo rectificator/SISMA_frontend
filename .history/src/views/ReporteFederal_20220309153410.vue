@@ -2,7 +2,7 @@
     <div class="">
         <!-- component -->
         <aside class="">
-            <div class="">
+            <div :class="text - black" class="">
                 <button class="" @click="open = !open">Menu</button>
                 <div v-if="open" class="">
                     <a
