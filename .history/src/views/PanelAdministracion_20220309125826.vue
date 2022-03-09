@@ -10,7 +10,7 @@
                 v-for="form in forms"
                 :key="forms.indexOf(form)"
                 :to="{
-                    name: 'sisma-form',
+                    name: 'form',
                     params: { form: form.routeName, name: form.name },
                 }"
                 class="border border-gray-400 hover:border-gray-500 hover:bg-gray-400 rounded py-2 text-lg text-center font-bold text-gray-700"
@@ -18,7 +18,7 @@
                 {{ form.name }}
             </router-link>
 
-            <form
+            <!-- <form
                 ref="form"
                 class="relative border border-gray-400 hover:border-gray-500 hover:bg-gray-400 rounded py-2 text-lg text-center font-bold text-gray-700"
             >
@@ -30,7 +30,7 @@
                     tabindex="-1"
                     class="absolute opacity-0 inset-0"
                 />
-            </form>
+            </form> -->
         </div>
     </div>
 </template>
@@ -46,18 +46,17 @@ export default {
             jwt: undefined,
             forms: [
                 {
-                    routeName: 'acciones_comunitarias',
-                    name: 'Acciones comunitarias',
+                    routeName: 'agregar_usuario',
+                    name: 'Agregar usuario',
                 },
                 {
-                    routeName: 'acciones_prevencion_salud',
-                    name: 'Acciones de prevención en salud',
+                    routeName: 'eliminar_usuario',
+                    name: 'Eliminar usuario',
                 },
-                { routeName: 'atencion_salud', name: 'Atención en salud' },
-                { routeName: 'capacitacion', name: 'Capacitación' },
-                { routeName: 'politicas_publicas', name: 'Políticas públicas' },
-                { routeName: 'suicidio', name: 'Suicidio' },
-                { routeName: 'mhGAP', name: 'mhGAP' },
+                {
+                    routeName: 'cambiar_contrasenia',
+                    name: 'Cambiar contraseña',
+                },
             ],
             links: [
                 {

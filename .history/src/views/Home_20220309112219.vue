@@ -1,10 +1,10 @@
 <template>
     <div v-if="jwt != ''" class="px-6 py-2">
-        <div class="fixed bg-transparent pr-6">
-            <px-header :links="links" />
+        <div class="fixed ">
+            <px-header class="pr-6" :links="links" />
         </div>
         <div
-            class="flex flex-col space-y-6 mt-20 my-8 px-4 py-4 bg-white border border-gray-400 rounded blur-md invert drop-shadow-xl"
+            class="flex flex-col space-y-6 my-8 px-4 py-4 bg-white border border-gray-400 rounded blur-md invert drop-shadow-xl"
         >
             <router-link
                 v-for="form in forms"

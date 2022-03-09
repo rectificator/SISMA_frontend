@@ -25,26 +25,19 @@
                         </router-link>
                     </div>
                 </div>
-                <div class="relative cursor-pointer">
-                    <div
-                        @click="showUserMenu = !showUserMenu"
-                        class="w-10 h-10"
-                    >
+                <div class="cursor-pointer">
+                    <div class="w-10 h-10">
                         <img
                             src="@/assets/undraw_profile_1.svg"
                             alt="user image"
                         />
                     </div>
-                    <div
-                        v-if="showUserMenu"
-                        class="absolute user-menu-align bg-transparent"
-                    >
-                        <router-link
-                            to="admin"
-                            class="rounded-full text-center bg-black text-white font-bold px-2 hover:bg-redSisma"
+                    <div>
+                        <button
+                            class="rounded-full text-center bg-black text-white font-bold px-2"
                         >
                             Administración
-                        </router-link>
+                        </button>
                     </div>
                 </div>
             </nav>
@@ -55,11 +48,7 @@
 <script>
 export default {
     name: 'PxHeader',
-    data() {
-        return {
-            showUserMenu: false,
-        }
-    },
+
     props: {
         links: {
             type: Array,
@@ -68,10 +57,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-.user-menu-align {
-    top: 120%;
-    left: -200%;
-}
-</style>

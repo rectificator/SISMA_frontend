@@ -46,18 +46,17 @@ export default {
             jwt: undefined,
             forms: [
                 {
-                    routeName: 'acciones_comunitarias',
-                    name: 'Acciones comunitarias',
+                    routeName: 'agregar_usuario',
+                    name: 'Agregar usuario',
                 },
                 {
-                    routeName: 'acciones_prevencion_salud',
-                    name: 'Acciones de prevención en salud',
+                    routeName: 'eliminar_usuario',
+                    name: 'Eliminar usuario',
                 },
-                { routeName: 'atencion_salud', name: 'Atención en salud' },
-                { routeName: 'capacitacion', name: 'Capacitación' },
-                { routeName: 'politicas_publicas', name: 'Políticas públicas' },
-                { routeName: 'suicidio', name: 'Suicidio' },
-                { routeName: 'mhGAP', name: 'mhGAP' },
+                {
+                    routeName: 'cambiar_contrasenia',
+                    name: 'Cambiar contraseña',
+                },
             ],
             links: [
                 {

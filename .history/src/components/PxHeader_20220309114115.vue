@@ -39,12 +39,11 @@
                         v-if="showUserMenu"
                         class="absolute user-menu-align bg-transparent"
                     >
-                        <router-link
-                            to="admin"
-                            class="rounded-full text-center bg-black text-white font-bold px-2 hover:bg-redSisma"
+                        <button
+                            class="rounded-full text-center bg-black text-white font-bold px-2"
                         >
                             Administración
-                        </router-link>
+                        </button>
                     </div>
                 </div>
             </nav>

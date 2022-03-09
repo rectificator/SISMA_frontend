@@ -5,7 +5,6 @@ import Home from '@/views/Home'
 import SismaForms from '@/views/SismaForms'
 import Reporte from '@/views/Reporte'
 import PanelAdministracion from '@/views/PanelAdministracion'
-import FormBase from '@/views/FormBase'
 import Error from '@/views/Error'
 
 Vue.use(Router)
@@ -37,11 +36,6 @@ export default new Router({
             path: '/admin',
             name: 'admin',
             component: PanelAdministracion,
-        },
-        {
-            path: '/form/:form',
-            name: 'form',
-            component: FormBase,
         },
         {
             path: '*',
